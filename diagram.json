@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "author": "Nomeda Matonyte",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard-half",
+      "id": "bb1",
+      "top": 140.1,
+      "left": 128.1,
+      "rotate": 90,
+      "attrs": {}
+    },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 172.8, "left": 52.84, "attrs": {} },
+    { "type": "wokwi-microphone", "id": "mic2", "top": 107.82, "left": -53.01, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 27.5, "left": 47.8, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 10.36, "left": 201.6, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 19.2, "left": 162.6, "attrs": {} },
+    {
+      "type": "wokwi-led-ring",
+      "id": "ring2",
+      "top": 202.11,
+      "left": -272.47,
+      "attrs": { "pixels": "24" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "mic1:1", "espo:5V", "red", [] ],
+    [ "mic1:2", "esp:GND", "black", [] ],
+    [ "mic1:3", "esp:A0", "green", [] ],
+    [ "gnd1:GND", "bb1:bn.1", "black", [ "h28.8", "v75.2" ] ],
+    [ "vcc1:VCC", "bb1:bp.1", "red", [ "v0" ] ],
+    [ "pot1:VCC", "bb1:bp.2", "red", [ "v0" ] ],
+    [ "pot1:GND", "bb1:bn.3", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:34", "gold", [ "v38.4", "h-86.8", "v96" ] ],
+    [ "ring2:GND", "bb1:bn.25", "black", [ "v86.4", "h305.9" ] ],
+    [ "ring2:VCC", "bb1:bp.25", "red", [ "v67.2", "h316.8" ] ],
+    [ "ring2:DIN", "esp:26", "green", [ "v28.8", "h124.8", "v-96" ] ],
+    [ "mic2:2", "bb1:bn.4", "black", [ "v9.6", "h229.09" ] ],
+    [ "mic2:1", "esp:35", "blue", [ "v96" ] ],
+    [ "esp:GND.3", "bb1:bn.14", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
