@@ -1,3 +1,10 @@
+---
+title: "Audio meter"
+author: "Nomeda"
+description: "A sound detector on an ESP32 with adjustable sound sensitivity"
+created_at: "2026-07-19"
+---
+
 ## July 19th
 ### Session 1
 I started by drawing the main components on paper just to visualise the layout. Then I went to Wokwi and started doing the actual simulation. I wired up all the hardware, even the components that I was 
